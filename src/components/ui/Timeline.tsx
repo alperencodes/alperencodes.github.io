@@ -6,38 +6,45 @@ interface TimelineItem {
     year: string;
     title: string;
     description: string;
+    icon: string;
 }
 
 const timelineData: TimelineItem[] = [
     {
         year: "2016",
-        title: "🚀 First steps in tech",
+        title: "First steps",
         description: "Wrote my first aim assist (cheat software) for Counter-Strike: Global Offensive and discovered my passion for how computers work",
+        icon: "rocket_launch"
     },
     {
         year: "2020",
-        title: "🏫 Vocational School for Information Technology",
-        description: "Passed the entrance test into the \"Informatikmittelschule Basel-Stadt\" (High School focusing on IT in Basel-City) after which I started actually learning stuff"
+        title: "Vocational School for Information Technology",
+        description: "Passed the entrance test into the \"Informatikmittelschule Basel-Stadt\" (Vocational School focusing on IT in Basel) after which I started actually learning stuff",
+        icon: "school"
     },
     {
         year: "2023",
-        title: "👨‍💻 Internship as Informatiker EFZ",
-        description: "Started a 1-year internship in Software Development, gaining hands-on experience in the industry & in order to graduate high school."
+        title: "Internship as Informatiker EFZ Applikationsentwicklung",
+        description: "Started a 1-year internship in Basel, gaining hands-on experience in the industry & in order to graduate high school.",
+        icon: "code"
     },
     {
         year: "2024",
-        title: "👨‍💻 Job as System Engineer",
+        title: "Job as System Engineer",
         description: "Temporarily worked as a System Engineer at the same company as my internship before my Military Service.",
+        icon: "work"
     },
     {
         year: "2025",
-        title: "🪖 Military Service",
-        description: "Completed mandatory military service in the Swiss Armed Forces."
+        title: "Mandatory National Service",
+        description: "Fulfilled federal service obligations (Military/Civil Protection).",
+        icon: "military_tech"
     },
     {
         year: "2025",
-        title: "🎓 BSc Computer Science at FHNW",
-        description: "Began my Bachelors in Computer Science, focusing on software engineering and distributed systems."
+        title: "BSc Computer Science at FHNW",
+        description: "Began my Bachelors in Computer Science, focusing on software engineering and distributed systems.",
+        icon: "school"
     }
 ];
 
@@ -63,17 +70,20 @@ export default function Timeline() {
                     />
                     
                     {/* COntent */}
-                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-                        <span className={`text-xs font-mono font-medium transition-colors duration-300 ${
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                        <span className={`mt-0.5 text-xs font-mono font-medium transition-colors duration-300 ${
                             activeIndex === index ? "text-ink" : "text-muted"
                         }`}>
                             {item.year}
                         </span>
                         
                         <div className="flex-1">
-                            <h3 className={`text-sm font-medium transition-colors duration-300 ${
+                            <h3 className={`flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
                                 activeIndex === index ? "text-ink" : "text-ink/80"
                             }`}>
+                                <span className="material-icons-outlined text-base leading-none">
+                                    {item.icon}
+                                </span>
                                 {item.title}
                             </h3>
                             
