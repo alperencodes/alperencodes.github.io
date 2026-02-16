@@ -81,7 +81,7 @@ export const skills: string[] = [
     "PHP",
     "Docker",
     "PostgreSQL",
-    "TSQL",
+    "T-SQL",
     "Git",
     "Linux",
 ];
