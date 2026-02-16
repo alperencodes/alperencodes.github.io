@@ -43,7 +43,7 @@ body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-ink);
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   font-size: 14px;
   line-height: 1.7;
 }
