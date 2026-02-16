@@ -27,6 +27,12 @@ export default function About() {
                         </p>
 
                         <p>
+                            A quick overview of my career:
+                        </p>
+                        
+                        <Timeline />
+
+                        <p>
                             Outside of tech, I do powerlifting, play padel, and spend time with friends and family.
                             Also, I&#39;ve been into cars for as long as I can remember—driving, maintaining, and just appreciating them.
                             Lately, I&#39;ve also been getting back into chess, mostly fast chess.
