@@ -55,7 +55,7 @@ body {
 
 /* link defaults */
 a {
-  color: inherit;
+  color: gray;
   text-decoration: none;
   transition: color 0.15s ease, opacity 0.15s ease;
 }
