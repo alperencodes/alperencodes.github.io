@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "@/data/portfolio";
+import React from "react";
 
 export const metadata: Metadata = {
     title: siteConfig.title,
