@@ -1,6 +1,5 @@
 import { siteConfig } from "@/data/portfolio";
 import Header from "@/components/layout/Header";
-import Contact from "@/components/ui/Contact";
 import Timeline from "@/components/ui/Timeline";
 
 export default function About() {
