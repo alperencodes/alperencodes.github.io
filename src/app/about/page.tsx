@@ -10,7 +10,7 @@ export default function About() {
             <main className="px-10 md:px-12 pb-16">
                 <section className="pt-16 pb-14">
                     <p className="text-xs font-medium uppercase tracking-widest text-muted mb-3">
-                        About Me
+                        Who Am I, exactly?
                     </p>
                     <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-snug max-w-lg mb-8">
                         More than just code.
@@ -18,7 +18,7 @@ export default function About() {
                     
                     <div className="prose prose-sm prose-neutral text-ink/80 max-w-2xl space-y-6 leading-relaxed">
                         <p>
-                            Hi, I&#39;m Alperen, a 21 year-old Swiss-Turkish CS student based in Basel. 🇨🇭
+                            Hi there, I&#39;m Alperen, a 21 year-old Swiss-Turkish computer science student based in Basel, Switzerland.
                         </p>
 
                         <p>
@@ -26,7 +26,7 @@ export default function About() {
                         </p>
 
                         <p>
-                            A quick overview of my career:
+                            A quick overview of my journey in tech:
                         </p>
                         
                         <Timeline />
@@ -49,7 +49,7 @@ export default function About() {
                             href="/" 
                             className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-muted hover:text-ink transition-colors group"
                         >
-                            <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
+                            <span className="group-hover:-translate-x-1 transition-transform material-icons-outlined text-sm">arrow_back</span> Back to Home
                         </a>
                     </div>
                 </section>
