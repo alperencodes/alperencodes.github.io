@@ -44,7 +44,7 @@ export default function Home() {
             {/* footer */}
             <footer className="px-10 md:px-12 py-6 border-t border-border">
                 <p className="text-[0.65rem] uppercase tracking-widest text-muted">
-                    © {new Date().getFullYear()} {siteConfig.name} | Made with ❤️ in Switzerland
+                    © {new Date().getFullYear()} {siteConfig.name}
                 </p>
             </footer>
         </>
