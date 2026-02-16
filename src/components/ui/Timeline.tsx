@@ -55,7 +55,7 @@ export default function Timeline() {
                 >
                     {/* dot indicator */}
                     <div 
-                        className={`absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full border transition-all duration-300 ${
+                        className={`absolute -left-1.25 top-1.5 h-2.5 w-2.5 rounded-full border transition-all duration-300 ${
                             activeIndex === index 
                                 ? "bg-ink border-ink scale-125" 
                                 : "bg-bg border-muted group-hover:border-ink"
