@@ -80,7 +80,12 @@ a:hover {
 }
 
 .project-row:hover {
+  color: black;
   background-color: var(--color-bg);
+}
+
+.project-row:hover p {
+  color: black;
 }
 
 /* tag chip */
