@@ -29,7 +29,7 @@ export default function ProjectTable() {
                         <p className={"text-xs leading-relaxed text-muted"}>
                             {project.description}
                         </p>
-                        <div>
+                        <div className={"flex flex-wrap gap-2"}>
                             {project.stack.map((tech) => (
                                 <span key={tech} className={"tag"}>
                                     {tech}
