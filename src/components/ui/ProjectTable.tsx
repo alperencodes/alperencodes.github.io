@@ -1,6 +1,7 @@
 "use client";
 
 import { projects } from "@/data/portfolio"
+import CursorTarget from "@/components/ui/CursorTarget";
 
 export default function ProjectTable() {
     return (
@@ -10,6 +11,7 @@ export default function ProjectTable() {
             </h2>
             <div className={"flex flex-col"}>
                 {projects.map((project, i) => (
+                    <CursorTarget key={project.name} as="div" borderRadius={6}>
                     <a
                         href={project.github}
                         key={project.name}
@@ -23,7 +25,7 @@ export default function ProjectTable() {
                                 {project.name}
                             </h3>
                             <span className={"shrink-0 text-[0.65rem] font-medium uppercase tracking-widest text-muted opacity-0 transition-opacity group-hover:opacity-100"}>
-                                Github →
+                                Github ➡
                             </span>
                         </div>
                         <p className={"text-xs leading-relaxed text-muted"}>
@@ -37,6 +39,7 @@ export default function ProjectTable() {
                             ))}
                         </div>
                     </a>
+                    </CursorTarget>
                 ))}
             </div>
         </section>

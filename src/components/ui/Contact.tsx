@@ -1,6 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/data/portfolio";
+import CursorTarget from "@/components/ui/CursorTarget";
 
 export default function Contact() {
     return (
@@ -9,13 +10,16 @@ export default function Contact() {
                 Contact
             </h2>
             <div className="flex flex-col gap-2 text-sm">
+                <CursorTarget as="span" borderRadius={4} style={{ width: "fit-content" }}>
                 <a
                     href={`mailto:${siteConfig.email}`}
                     className="underline underline-offset-4 decoration-border hover:decoration-ink"
                 >
                     {siteConfig.email}
                 </a>
+                </CursorTarget>
                 <div className="flex gap-6 mt-1">
+                    <CursorTarget as="span" borderRadius={4}>
                     <a
                         href={siteConfig.github}
                         target="_blank"
@@ -24,6 +28,8 @@ export default function Contact() {
                     >
                         GitHub
                     </a>
+                    </CursorTarget>
+                    <CursorTarget as="span" borderRadius={4}>
                     <a
                         href={siteConfig.gitlab}
                         target="_blank"
@@ -32,6 +38,8 @@ export default function Contact() {
                     >
                         GitLab (FHNW)
                     </a>
+                    </CursorTarget>
+                    <CursorTarget as="span" borderRadius={4}>
                     <a
                         href={siteConfig.linkedin}
                         target="_blank"
@@ -40,6 +48,7 @@ export default function Contact() {
                     >
                         LinkedIn
                     </a>
+                    </CursorTarget>
                 </div>
             </div>
         </section>
