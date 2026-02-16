@@ -34,7 +34,7 @@ export const siteConfig: SiteConfig = {
 // navigation
 
 export const navLinks = [
-    { label: "Who am I?", href: "/about" },
+    { label: "About", href: "/about" },
     { label: "Projects", href: "/#projects" },
     { label: "Contact", href: "/#contact" },
 ] as const;
@@ -43,28 +43,28 @@ export const navLinks = [
 
 export const projects: Project[] = [
     {
-        name: "Modern Pong - Solo Project \"Individuelles Softwareprojekt\" @ FHNW",
-        stack: ["Java", "JavaFX", "SQLite"],
+        name: "Modern Pong: Physics Simulation",
+        stack: ["Java", "JavaFX", "SQLite", "Gradle"],
         description:
             "Object-oriented reimplementation of the classic Pong game. Built with JavaFX and Gradle, featuring a custom physics engine and SQLite integration for high scores.",
         github: "https://gitlab.fhnw.ch/alperen.yilmaz/modernpong",
     },
     {
-        name: "SecAuth",
+        name: "SecAuth Security Suite",
         stack: ["PHP", "PHPMailer", "HTML/CSS"],
         description:
-            "Security-focused web application implementing defenses against OWASP Top-10 vulnerabilities, including SQL Injection, XSS, and CSRF protection.",
+            "Hardened web application infrastructure built to mitigate OWASP Top-10 vulnerabilities. Features manual implementations of anti-SQL Injection, CSRF token validation, and XSS sanitization layers.",
         github: "https://github.com/alperencodes/SecAuth",
     },
     {
-        name: "UmweltReise - Group Project \"Projekt 1 Informatik\" @ FHNW",
-        stack: ["Java", "Trick17", "Pi4J", "SQLite"],
-        description: "Educational game about sustainable travel. As Software Architect, I designed the system architecture, authored the SAD (Software Architecture Document), and led the implementation of core game mechanics.",
+        name: "UmweltReise: Simulation of sustainable travel",
+        stack: ["Java", "Pi4J", "SQLite", "System Architecture"],
+        description: "Interactive educational software integrated with embedded hardware (Pi4J). As Lead Software Architect, I authored the technical documentation (SAD) and designed the modular system architecture.",
         github: "https://gitlab.fhnw.ch/ip12-25hs/ip12-hs25-team4/umweltreise",
     },
     {
-        name: "Autohaus",
-        stack: ["C#", "TSQL", "HTML/CSS"],
+        name: "Autohaus (enterprise inventory manager)",
+        stack: ["C#", "T-SQL", "HTML/CSS", ".NET"],
         description:
             "Car dealership management system. Features a normalized relational database schema (3NF) and a C# backend for inventory management.",
         github: "https://github.com/alperencodes/autohaus",
@@ -78,6 +78,7 @@ export const skills: string[] = [
     "Python",
     "TypeScript",
     "C#",
+    "PHP",
     "Docker",
     "PostgreSQL",
     "TSQL",
