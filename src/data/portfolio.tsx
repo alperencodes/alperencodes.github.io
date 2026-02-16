@@ -23,12 +23,12 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
     name: "alperen.codes",
     title: "alperen.codes",
-    description: "Passionate about backend development, distributed systems, and clean code. Currently studying Computer Science at FHNW in Brugg-Windisch AG. 🇨🇭",
-    heroStatement: "Informatiker EFZ & Student in Computer Science",
+    description: "Passionate about backend development, distributed systems, and clean code. Currently studying Computer Science at the University of Applied Sciences and Arts Northwestern Switzerland (FHNW) in Brugg-Windisch, Switzerland.",
+    heroStatement: "Informatiker EFZ | Student in Computer Science",
     email: "hello@alperen.codes",
     github: "https://github.com/alperencodes",
     gitlab: "https://gitlab.fhnw.ch/alperen.yilmaz",
-    linkedin: "https://linkedin.com/in/alperenyilmazdev",
+    linkedin: "https://www.linkedin.com/in/alperen-yilmaz-dev/",
 };
 
 // navigation
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     {
         name: "UmweltReise: Simulation of sustainable travel",
         stack: ["Java", "Pi4J", "SQLite", "System Architecture"],
-        description: "Interactive educational software integrated with embedded hardware (Pi4J). As Lead Software Architect, I authored the technical documentation (SAD) and designed the modular system architecture.",
+        description: "Interactive educational software integrated with embedded hardware (Pi4J). As Lead Software Architect, I authored the technical documentation (SAD) and designed the modular system architecture. Note: This project is WIP & closed source. If you're a contributor of this project, feel free to commence by clicking this link.",
         github: "https://gitlab.fhnw.ch/ip12-25hs/ip12-hs25-team4/umweltreise",
     },
     {
