@@ -13,7 +13,7 @@ export default function ProjectTable() {
                 {projects.map((project, i) => (
                     <CursorTarget key={project.name} as="div" borderRadius={6}>
                     <a
-                        href={project.github}
+                        href={project.repo}
                         key={project.name}
                         target={"_blank"}
                         rel={"noopener noreferrer"}
@@ -25,7 +25,7 @@ export default function ProjectTable() {
                                 {project.name}
                             </h3>
                             <span className={"shrink-0 text-[0.65rem] font-medium uppercase tracking-widest text-muted opacity-0 transition-opacity group-hover:opacity-100"}>
-                                Github ➡
+                                repo -&gt;
                             </span>
                         </div>
                         <p className={"text-xs leading-relaxed text-muted"}>
