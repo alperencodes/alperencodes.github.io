@@ -8,7 +8,6 @@ export default function Header() {
     return (
         <header className="flex flex-col md:flex-row items-start md:items-center justify-between py-8 px-10 md:px-12 gap-4 md:gap-0">
             <CursorTarget as="span" borderRadius={4}>
-                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                 <a href="/" className="hover:opacity-80 transition-opacity">
                     <Image
                         src="/AC.png"

@@ -85,3 +85,51 @@ export const skills: string[] = [
     "Git",
     "Linux",
 ];
+
+// timeline
+
+export interface TimelineItem {
+    year: string;
+    title: string;
+    description: string;
+    icon: string;
+}
+
+export const timelineData: TimelineItem[] = [
+    {
+        year: "2016",
+        title: "First steps",
+        description: "Wrote my first aim assist (cheat software) for Counter-Strike: Global Offensive and discovered my passion for how computers work",
+        icon: "rocket_launch"
+    },
+    {
+        year: "2020",
+        title: "Vocational School for Information Technology",
+        description: "Passed the entrance exam into the \"Informatikmittelschule Basel-Stadt\" (Vocational School focusing on IT in Basel) after which I started actually learning stuff",
+        icon: "school"
+    },
+    {
+        year: "2023",
+        title: "Internship as Informatiker EFZ Applikationsentwicklung",
+        description: "Started a 1-year internship in Basel, gaining hands-on experience in the industry & in order to graduate high school.",
+        icon: "code"
+    },
+    {
+        year: "2024",
+        title: "Job as System Engineer",
+        description: "Temporarily worked as a System Engineer at the same company as my internship before my Military Service.",
+        icon: "work"
+    },
+    {
+        year: "2025",
+        title: "Mandatory National Service",
+        description: "Fulfilled federal service obligations (Military/Civil Protection).",
+        icon: "military_tech"
+    },
+    {
+        year: "2025",
+        title: "B.Sc. Computer Science at FHNW",
+        description: "Began my Bachelors in Computer Science, focusing on software engineering and distributed systems.",
+        icon: "school"
+    }
+];

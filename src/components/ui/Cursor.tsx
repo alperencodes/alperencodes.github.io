@@ -21,7 +21,7 @@ export default function Cursor() {
     const cursorX = useMotionValue(0);
     const cursorY = useMotionValue(0);
 
-    // Smoothed via springss
+    // Smoothed via springs
     const springX = useSpring(cursorX, SPRING_FAST);
     const springY = useSpring(cursorY, SPRING_FAST);
 
@@ -80,7 +80,7 @@ export default function Cursor() {
         };
     }, [isDesktop, target, cursorX, cursorY]);
 
-    // lock position to target elemetn
+    // lock position to target element
 
     useEffect(() => {
         if (target) {

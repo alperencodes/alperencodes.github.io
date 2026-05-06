@@ -1,5 +1,5 @@
-import { siteConfig } from "@/data/portfolio";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import Timeline from "@/components/ui/Timeline";
 
 export default function About() {
@@ -38,15 +38,13 @@ export default function About() {
                         </p>
 
                         <p>
-                            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                             If you want to talk or collaborate, feel free to <a href="/#contact">reach out</a>!
                         </p>
                     </div>
 
                     <div className="mt-8">
-                        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                         <a
-                            href="/" 
+                            href="/"
                             className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-muted hover:text-ink transition-colors group"
                         >
                             <span className="group-hover:-translate-x-1 transition-transform material-icons-outlined text-sm">arrow_back</span> Back to Home
@@ -55,11 +53,7 @@ export default function About() {
                 </section>
             </main>
 
-            <footer className="px-10 md:px-12 py-6 border-t border-border">
-                <p className="text-[0.65rem] uppercase tracking-widest text-muted">
-                    © {new Date().getFullYear()} {siteConfig.name}
-                </p>
-            </footer>
+            <Footer />
         </>
     );
 }
