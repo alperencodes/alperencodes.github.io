@@ -1,5 +1,6 @@
 import { siteConfig } from "@/data/portfolio";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import ProjectTable from "@/components/ui/ProjectTable";
 import TechStack from "@/components/ui/TechStack";
 import Contact from "@/components/ui/Contact";
@@ -35,7 +36,7 @@ export default function Home() {
                 <div className="pt-12 pb-12 border-b border-border">
                     <ProjectTable />
                     <br/>
-                    See more on my <a href="https://github.com/alperencodes" target={"_blank"}>GitHub</a> and <a href="https://gitlab.fhnw.ch/alperen.yilmaz" target={"_blank"}>GitLab</a>.
+                    See more on my <a href="https://github.com/alperencodes" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://gitlab.fhnw.ch/alperen.yilmaz" target="_blank" rel="noopener noreferrer">GitLab</a>.
                 </div>
 
                 {/* tech stack */}
@@ -49,12 +50,7 @@ export default function Home() {
                 </div>
             </main>
 
-            {/* footer */}
-            <footer className="px-10 md:px-12 py-6 border-t border-border">
-                <p className="text-[0.65rem] uppercase tracking-widest text-muted">
-                    © {new Date().getFullYear()} {siteConfig.name}
-                </p>
-            </footer>
+            <Footer />
         </>
     );
 }
