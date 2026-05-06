@@ -32,8 +32,8 @@ export default function About() {
                         <Timeline />
 
                         <p>
-                            Outside of tech, I do powerlifting, play padel, and spend time with friends and family.
-                            Also, I&#39;ve been into cars for as long as I can remember—driving, maintaining, and just appreciating them.
+                            Outside of tech, I do powerlifting, play tennis, and spend time with friends and family.
+                            Also, I&#39;ve been into cars for as long as I can remember; driving, maintaining, and just appreciating them.
                             Lately, I&#39;ve also been getting back into chess, mostly fast chess.
                         </p>
 

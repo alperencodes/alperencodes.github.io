@@ -19,7 +19,7 @@ const timelineData: TimelineItem[] = [
     {
         year: "2020",
         title: "Vocational School for Information Technology",
-        description: "Passed the entrance test into the \"Informatikmittelschule Basel-Stadt\" (Vocational School focusing on IT in Basel) after which I started actually learning stuff",
+        description: "Passed the entrance exam into the \"Informatikmittelschule Basel-Stadt\" (Vocational School focusing on IT in Basel) after which I started actually learning stuff",
         icon: "school"
     },
     {
@@ -42,7 +42,7 @@ const timelineData: TimelineItem[] = [
     },
     {
         year: "2025",
-        title: "BSc Computer Science at FHNW",
+        title: "B.Sc. Computer Science at FHNW",
         description: "Began my Bachelors in Computer Science, focusing on software engineering and distributed systems.",
         icon: "school"
     }

@@ -13,7 +13,7 @@ export default function Home() {
                 {/* hero */}
                 <section className="pt-16 pb-14 border-b border-border">
                     <p className="text-xs font-medium uppercase tracking-widest text-muted mb-3">
-                        Aspiring Engineer
+                        Software Engineer
                     </p>
                     <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-snug max-w-lg">
                         {siteConfig.heroStatement}
