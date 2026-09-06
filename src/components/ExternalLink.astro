@@ -1,0 +1,60 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  accessibleLabel?: string;
+}
+
+const { href, label, accessibleLabel } = Astro.props;
+---
+
+<a
+  class="quiet-link external-link"
+  href={href}
+  aria-label={accessibleLabel}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {label}
+  <svg
+    width="10"
+    height="10"
+    viewBox="0 0 12 12"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      d="M2.5 9.5 9.5 2.5M3 2.5h6.5V9"
+      stroke="currentColor"
+      stroke-width="1.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+  </svg>
+</a>
+
+<style>
+  .external-link {
+    gap: var(--space-1);
+  }
+
+  .external-link:hover,
+  .external-link:focus-visible {
+    text-decoration: none;
+  }
+
+  svg {
+    flex: none;
+    opacity: 0.8;
+    transition:
+      transform var(--motion-duration) ease-out,
+      opacity var(--motion-duration) ease-out;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .external-link:hover svg {
+      transform: translate(2px, -2px);
+      opacity: 1;
+    }
+  }
+</style>

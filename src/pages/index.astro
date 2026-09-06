@@ -1,0 +1,232 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WorkEntry from "../components/WorkEntry.astro";
+import { profile, experience, education } from "../data/profile";
+import { selectedWork } from "../data/work";
+---
+
+<BaseLayout>
+  <section class="introduction" aria-labelledby="intro-title" data-reveal>
+    <p class="role">{profile.role}</p>
+    <h1 id="intro-title">{profile.name}</h1>
+    <p class="intro-copy">{profile.introduction}</p>
+  </section>
+
+  {
+    selectedWork.length > 0 && (
+      <section id="work" aria-labelledby="work-title">
+        <h2 class="section-label" id="work-title" data-reveal>
+          Selected Work
+        </h2>
+        <ol class="work-list">
+          {selectedWork.map((work, index) => (
+            <WorkEntry work={work} index={index} />
+          ))}
+        </ol>
+      </section>
+    )
+  }
+
+  <section id="about" class="about" aria-labelledby="about-title" data-reveal>
+    <h2 class="section-label" id="about-title">About</h2>
+    <div class="about-copy">
+      <p class="about-lead">{profile.aboutLead}</p>
+      <p>{profile.about}</p>
+    </div>
+  </section>
+
+  <div class="background" data-reveal>
+    <section aria-labelledby="experience-title">
+      <h2 class="section-label" id="experience-title">Experience</h2>
+      {
+        experience.length > 0 ? (
+          <ul class="history">
+            {experience.map((entry) => (
+              <li>
+                <p class="period">{entry.period}</p>
+                <div>
+                  <h3>{entry.organization}</h3>
+                  <p>{entry.role}</p>
+                  {entry.context && <p class="context">{entry.context}</p>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="content-note">Experience details pending confirmation.</p>
+        )
+      }
+    </section>
+    <section class="education" aria-labelledby="education-title">
+      <h2 class="section-label" id="education-title">Education</h2>
+      <ul class="history">
+        {
+          education.map((entry) => (
+            <li>
+              <p class="period">{entry.period}</p>
+              <div>
+                <h3>{entry.institution}</h3>
+                <p>{entry.degree}</p>
+                <p class="context">{entry.context}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const groups = document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+  // Only hide content once the observer is available; no-JS and reduced-motion stay visible.
+  if (!reducedMotion.matches && "IntersectionObserver" in window) {
+    const reveal = (group: Element) => {
+      group.classList.remove("reveal-pending");
+      group.classList.add("is-visible");
+      observer.unobserve(group);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) reveal(entry.target);
+      }
+    });
+
+    groups.forEach((group) => group.classList.add("reveal-pending"));
+    // Establish the starting styles before observing even the initially visible hero.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        groups.forEach((group) => observer.observe(group));
+      });
+    });
+
+    document.addEventListener("focusin", (event) => {
+      if (event.target instanceof Element) {
+        const group = event.target.closest("[data-reveal]");
+        if (group) reveal(group);
+      }
+    });
+
+    reducedMotion.addEventListener("change", (event) => {
+      if (event.matches) {
+        groups.forEach(reveal);
+        observer.disconnect();
+      }
+    });
+  }
+</script>
+
+<style>
+  .introduction {
+    padding-block: calc(var(--section-space) * 0.8) var(--section-space);
+  }
+  .role {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-5);
+  }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-display);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    text-transform: lowercase;
+  }
+  .intro-copy {
+    margin-top: var(--space-6);
+    max-width: 49ch;
+    font-size: var(--text-lg);
+    line-height: 1.6;
+  }
+  .work-list {
+    margin: var(--space-5) 0 0;
+    padding: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .about {
+    display: grid;
+    gap: var(--space-5);
+    margin-block: var(--section-space);
+  }
+  .about-copy {
+    max-width: var(--reading-width);
+  }
+  .about-lead {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: 1.12;
+    margin-bottom: var(--space-5);
+    text-wrap: pretty;
+  }
+  .about-copy > p + p {
+    color: var(--color-text-secondary);
+  }
+  .background {
+    display: grid;
+    gap: var(--space-8);
+    margin-bottom: var(--section-space);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-7);
+  }
+  .content-note {
+    margin-top: var(--space-6);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    max-width: 36ch;
+  }
+  .history {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0 0;
+  }
+  .history li {
+    display: grid;
+    gap: var(--space-2);
+  }
+  .history li + li {
+    margin-top: var(--space-6);
+  }
+  .period,
+  .context {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+  }
+  .period {
+    color: var(--color-text-muted);
+  }
+  .history h3 {
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+  .context {
+    margin-top: var(--space-1);
+    max-width: 36ch;
+  }
+
+  @media (min-width: 48rem) {
+    .about {
+      grid-template-columns: 3fr 7fr 2fr;
+      gap: var(--space-6);
+    }
+    .about > h2 {
+      padding-top: var(--space-3);
+    }
+    .background {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: var(--space-7);
+    }
+  }
+
+  @media (min-width: 60rem) {
+    .history li {
+      grid-template-columns: 7rem minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+    .period {
+      padding-top: var(--space-1);
+    }
+  }
+</style>
