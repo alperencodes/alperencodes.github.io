@@ -55,8 +55,8 @@ import { selectedWork } from "../data/work";
               <li>
                 <p class="period">{entry.period}</p>
                 <div>
-                  <h3>{entry.organization}</h3>
-                  <p>{entry.role}</p>
+                  <h3 style="font-style: italic">{entry.organization}</h3>
+                  <p style="font-weight: bold">{entry.role}</p>
                   {entry.context && <p class="context">{entry.context}</p>}
                 </div>
               </li>
@@ -75,8 +75,8 @@ import { selectedWork } from "../data/work";
             <li>
               <p class="period">{entry.period}</p>
               <div>
-                <h3>{entry.institution}</h3>
-                <p>{entry.degree}</p>
+                <h3 style="font-style: italic">{entry.institution}</h3>
+                <p style="font-weight: bold">{entry.degree}</p>
                 <p class="context">{entry.context}</p>
               </div>
             </li>

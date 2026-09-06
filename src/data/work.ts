@@ -10,24 +10,22 @@ export interface Work {
 // UmweltReise has no public destination; do not link visitors to a private GitLab.
 export const selectedWork: Work[] = [
   {
-    title: "SecAuth",
-    context: "Web security",
+    title: "Complemedis",
+    context: "software engineering internship",
     description:
-      "A PHP web application built to learn how security measures work in practice, with a MySQL database and email integration.",
-    technologies: ["PHP", "MySQL", "PHPMailer"],
-    href: "https://github.com/alperencodes/SecAuth",
-    linkLabel: "GitHub",
+        "Contributed to a closed-source healthcare webplatform across security, reliability, localization, and product development - conducting SAST-backed security analysis with Qodana, implementing dev/prod health checks and i18n, and shipping multiple frontend and backend features.",
+    technologies: ["TypeScript", "Next.js", "Express.js", "Supabase", "Qodana"],
   },
   {
     title: "UmweltReise",
-    context: "University coursework",
+    context: "university coursework",
     description:
       "Educational software exploring sustainable travel, connecting an interactive simulation with embedded hardware.",
     technologies: ["Java", "Pi4J", "SQLite", "Maven"],
   },
   {
     title: "HomeSecuritySystem",
-    context: "Camera-based motion detection",
+    context: "camera-based motion detection",
     description:
       "Motion detection from a camera feed using OpenCV, with configurable thresholds and actions that open a local file and a web page.",
     technologies: ["Python", "OpenCV"],
@@ -36,9 +34,9 @@ export const selectedWork: Work[] = [
   },
   {
     title: "dotfiles",
-    context: "Personal configuration",
+    context: "personal configuration",
     description:
-      "My Windows setup, kept under version control: tiling windows, keyboard shortcuts, and a status bar, with configuration notes alongside the files.",
+      "My Windows/macOS configs, version controlled: tiling WM, keyboard shortcuts, status bar and more.",
     technologies: ["komorebi", "whkd", "YASB"],
     href: "https://github.com/alperencodes/dotfiles",
     linkLabel: "GitHub",

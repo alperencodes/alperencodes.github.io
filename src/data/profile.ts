@@ -38,20 +38,20 @@ export const experience: Experience[] = [
     organization: "Complemedis AG",
     role: "Software Engineer · 3-month summer internship",
     context:
-      "TypeScript · Next.js · Express.js · Supabase/PostgreSQL · Tailwind CSS · Full-stack · Security",
+      "typescript · next.js · express.js · supabase · tailwind · qodana",
   },
   {
     period: "2024",
     organization: "Dexion Services AG",
     role: "System Engineer · Fixed-term",
     context:
-      "Windows · Linux · Virtualization · Microsoft Entra ID · Monitoring · Backups",
+      "windows · linux · virtualization · azure IAM · monitoring · backups",
   },
   {
     period: "2023-2024",
     organization: "Dexion Services AG",
-    role: "Software Engineer Intern · Informatiker EFZ",
-    context: "Python · Automation · Monitoring · PHP · WordPress",
+    role: "Software Engineer · 12-month internship",
+    context: "python · automation · monitoring",
   },
 ];
 
@@ -62,13 +62,13 @@ export const education = [
       "University of Applied Sciences and Arts Northwestern Switzerland",
     degree: "B.Sc. Computer Science",
     context:
-      "Security · Platforms · DevOps · Software Engineering · Databases · Linux/Systems · CI/CD",
+      "security · platforms · devops · software engineering · databases · linux · system architecture · CI/CD",
   },
   {
     period: "2020-2024",
-    institution: "Informatikmittelschule (IMS)",
+    institution: "Informatikmittelschule (transl. computer science secondary school)",
     degree:
-      "Informatiker Applikationsentwicklung EFZ & Berufsmaturität Wirtschaft",
-    context: "Computer Science · Business & Finance",
+      "Federal VET Diploma in Computer Science & Federal Voccational Baccaleaurate in Business",
+    context: "computer science · business & finance",
   },
 ];
