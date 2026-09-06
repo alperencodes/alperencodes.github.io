@@ -6,7 +6,7 @@ export const profile = {
     beforeCountry: "CS student based in ",
     country: "Switzerland",
     afterCountry: ". Passionate about backend development, systems, and ",
-    security: "$ecurity",
+    security: "security",
     afterSecurity: ".",
   },
   aboutLead: {
@@ -15,7 +15,7 @@ export const profile = {
     afterEmphasis: ".",
   },
   about:
-    "I’m Swiss-Turkish. Alongside my studies, I build projects to understand systems in depth, from the software itself to the infrastructure it runs on. I care about code that is clear enough to come back to and make sense of.",
+    "Alongside my studies, I build projects to understand systems in depth, from the software itself to the infrastructure it runs on. I care about code that is clear enough to come back to and make sense of.",
   elsewhere: [
     { label: "GitHub", href: "https://github.com/alperencodes" },
     {
