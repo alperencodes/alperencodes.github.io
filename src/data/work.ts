@@ -40,7 +40,7 @@ export const selectedWork: Work[] = [
     context: "Personal configuration",
     description:
       "My Windows setup, kept under version control: tiling windows, keyboard shortcuts, and a status bar, with configuration notes alongside the files.",
-    technologies: ["Komorebi", "whkd", "YASB"],
+    technologies: ["komorebi", "whkd", "YASB"],
     href: "https://github.com/alperencodes/dotfiles",
     linkLabel: "GitHub",
   },
