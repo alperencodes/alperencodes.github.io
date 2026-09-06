@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v4
       # The owner will update CNAME at domain cutover. Never deploy the old domain.
       - name: Verify production domain
-        run: test "$(tr -d '\r\n' < public/CNAME)" = 'alperen.me'
+        run: test "$(tr -d '\r\n' < public/CNAME)" = 'alperen.codes'
       - uses: actions/configure-pages@v5
       - uses: actions/deploy-pages@v4
         id: deployment
