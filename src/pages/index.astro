@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WorkEntry from "../components/WorkEntry.astro";
+import PersonalGallery from "../components/PersonalGallery.astro";
 import { profile, experience, education } from "../data/profile";
 import { selectedWork } from "../data/work";
 ---
@@ -33,9 +34,9 @@ import { selectedWork } from "../data/work";
     )
   }
 
-  <section id="about" class="about" aria-labelledby="about-title" data-reveal>
-    <h2 class="section-label" id="about-title">About</h2>
-    <div class="about-copy">
+  <section id="about" class="about" aria-labelledby="about-title">
+    <h2 class="section-label" id="about-title" data-reveal>About</h2>
+    <div class="about-copy" data-reveal>
       <p class="about-lead">
         {profile.aboutLead.beforeEmphasis}<em>{profile.aboutLead.emphasis}</em>{
           profile.aboutLead.afterEmphasis
@@ -43,6 +44,7 @@ import { selectedWork } from "../data/work";
       </p>
       <p>{profile.about}</p>
     </div>
+    <PersonalGallery />
   </section>
 
   <div class="background" data-reveal>

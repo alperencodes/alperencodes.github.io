@@ -11,6 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "test:media": "node --test tests/media-assets.test.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -18,7 +19,8 @@
     "@fontsource/eb-garamond": "^5.3.0",
     "@fontsource/inter": "^5.3.0",
     "astro": "^7.3.1",
-    "lenis": "^1.3.26"
+    "lenis": "^1.3.26",
+    "sharp": "^0.35.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
