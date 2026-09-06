@@ -9,7 +9,13 @@ import { selectedWork } from "../data/work";
   <section class="introduction" aria-labelledby="intro-title" data-reveal>
     <p class="role">{profile.role}</p>
     <h1 id="intro-title">{profile.name}</h1>
-    <p class="intro-copy">{profile.introduction}</p>
+    <p class="intro-copy">
+      {profile.introduction.beforeCountry}<span class="country-highlight"
+        >{profile.introduction.country}</span
+      >{profile.introduction.afterCountry}<span class="security-highlight"
+        >{profile.introduction.security}</span
+      >{profile.introduction.afterSecurity}
+    </p>
   </section>
 
   {
@@ -30,7 +36,11 @@ import { selectedWork } from "../data/work";
   <section id="about" class="about" aria-labelledby="about-title" data-reveal>
     <h2 class="section-label" id="about-title">About</h2>
     <div class="about-copy">
-      <p class="about-lead">{profile.aboutLead}</p>
+      <p class="about-lead">
+        {profile.aboutLead.beforeEmphasis}<em>{profile.aboutLead.emphasis}</em>{
+          profile.aboutLead.afterEmphasis
+        }
+      </p>
       <p>{profile.about}</p>
     </div>
   </section>
@@ -141,6 +151,32 @@ import { selectedWork } from "../data/work";
     font-size: var(--text-lg);
     line-height: 1.6;
   }
+  .country-highlight {
+    display: inline-block;
+    color: var(--color-text);
+    background: linear-gradient(
+      105deg,
+      #d85a5a 10%,
+      var(--color-text) 52%,
+      #d85a5a 92%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .security-highlight {
+    display: inline-block;
+    color: var(--color-text);
+    font-family:
+      ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: 0.88em;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    background: linear-gradient(105deg, #62c989 10%, #c3f5cf 52%, #62c989 92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
   .work-list {
     margin: var(--space-5) 0 0;
     padding: 0;
@@ -160,6 +196,9 @@ import { selectedWork } from "../data/work";
     line-height: 1.12;
     margin-bottom: var(--space-5);
     text-wrap: pretty;
+  }
+  .about-lead em {
+    font-style: italic;
   }
   .about-copy > p + p {
     color: var(--color-text-secondary);
@@ -227,6 +266,14 @@ import { selectedWork } from "../data/work";
     }
     .period {
       padding-top: var(--space-1);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .country-highlight,
+    .security-highlight {
+      background: none;
+      color: currentColor;
     }
   }
 </style>

@@ -2,9 +2,18 @@
 export const profile = {
   name: "alperen yilmaz",
   role: "software engineer · computer science",
-  introduction:
-    "CS student passionate about backend development, systems, and security.",
-  aboutLead: "I like understanding what happens beneath the surface.",
+  introduction: {
+    beforeCountry: "CS student based in ",
+    country: "Switzerland",
+    afterCountry: ". Passionate about backend development, systems, and ",
+    security: "$ecurity",
+    afterSecurity: ".",
+  },
+  aboutLead: {
+    beforeEmphasis: "I like understanding what happens ",
+    emphasis: "beneath the surface",
+    afterEmphasis: ".",
+  },
   about:
     "I’m Swiss-Turkish. Alongside my studies, I build projects to understand systems in depth, from the software itself to the infrastructure it runs on. I care about code that is clear enough to come back to and make sense of.",
   elsewhere: [
