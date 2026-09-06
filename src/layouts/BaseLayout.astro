@@ -13,7 +13,7 @@ interface Props {
 
 const {
   title = "alperen.",
-  description = "Software engineer and Computer Science student at FHNW, based in Basel, Switzerland. Selected work, experience, and interests.",
+  description = "Software engineer and Computer Science student at FHNW. Selected work, experience, and interests.",
   noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -106,9 +106,14 @@ const person = {
       (link.target && link.target !== "_self")
     )
       return;
-    const target = document.getElementById(
-      decodeURIComponent(link.hash.slice(1)),
-    );
+    let targetId: string;
+    try {
+      targetId = decodeURIComponent(link.hash.slice(1));
+    } catch {
+      return;
+    }
+
+    const target = document.getElementById(targetId);
     if (!target) return;
 
     event.preventDefault();

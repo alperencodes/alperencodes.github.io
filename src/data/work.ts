@@ -7,7 +7,6 @@ export interface Work {
   linkLabel?: string;
 }
 
-// Selection confirmed by Alperen. Sources and remaining questions: CONTENT_TODO.md.
 // UmweltReise has no public destination; do not link visitors to a private GitLab.
 export const selectedWork: Work[] = [
   {

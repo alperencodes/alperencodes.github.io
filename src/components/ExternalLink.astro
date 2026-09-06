@@ -6,12 +6,19 @@ interface Props {
 }
 
 const { href, label, accessibleLabel } = Astro.props;
+const url = new URL(href);
+
+if (url.protocol !== "https:" || url.username || url.password) {
+  throw new Error("ExternalLink requires an HTTPS URL without credentials.");
+}
+
+const linkAccessibleLabel = `${accessibleLabel ?? label} (opens in a new tab)`;
 ---
 
 <a
   class="quiet-link external-link"
-  href={href}
-  aria-label={accessibleLabel}
+  href={url}
+  aria-label={linkAccessibleLabel}
   target="_blank"
   rel="noopener noreferrer"
 >

@@ -2,7 +2,7 @@
 import { existsSync } from "node:fs";
 
 // Adding the real document enables navigation on the next build, with no broken placeholder.
-const hasCv = existsSync("public/cv.pdf");
+const hasCv = existsSync(new URL("../../public/cv.pdf", import.meta.url));
 ---
 
 <header class="container">
