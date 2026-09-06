@@ -20,7 +20,7 @@ export const selectedWork: Work[] = [
   },
   {
     title: "UmweltReise",
-    context: "FHNW coursework",
+    context: "University coursework",
     description:
       "Educational software exploring sustainable travel, connecting an interactive simulation with embedded hardware.",
     technologies: ["Java", "Pi4J", "SQLite", "Maven"],
