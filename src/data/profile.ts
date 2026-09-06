@@ -58,7 +58,8 @@ export const experience: Experience[] = [
 export const education = [
   {
     period: "2025-present",
-    institution: "University of Applied Sciences and Arts Northwestern Switzerland",
+    institution:
+      "University of Applied Sciences and Arts Northwestern Switzerland",
     degree: "B.Sc. Computer Science",
     context:
       "Security · Platforms · DevOps · Software Engineering · Databases · Linux/Systems · CI/CD",
