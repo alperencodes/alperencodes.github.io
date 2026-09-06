@@ -13,7 +13,7 @@ export const selectedWork: Work[] = [
     title: "Complemedis",
     context: "software engineering internship",
     description:
-        "Contributed to a closed-source healthcare webplatform across security, reliability, localization, and product development - conducting SAST-backed security analysis with Qodana, implementing dev/prod health checks and i18n, and shipping multiple frontend and backend features.",
+      "Contributed to a closed-source healthcare web platform, including SAST-based security testing with Qodana, health checks and load balancing for reliability, i18n support for multiple languages and shipped a bunch of other features.",
     technologies: ["TypeScript", "Next.js", "Express.js", "Supabase", "Qodana"],
   },
   {
