@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.next/
+out/
+.verification/
+package-lock.json
+SITE_SPEC.md
+DESIGN.md
+CONTENT_REFERENCE.md
+CNAME
+public/CNAME

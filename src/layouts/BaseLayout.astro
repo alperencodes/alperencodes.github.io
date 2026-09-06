@@ -1,0 +1,130 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { profile } from "../data/profile";
+import "../styles/global.css";
+import "lenis/dist/lenis.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "alperen.me",
+  description = "Software engineer and Computer Science student at FHNW, based in Basel, Switzerland. Selected work, experience, and interests.",
+  noindex = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  url: Astro.site,
+  sameAs: profile.elsewhere.map(({ href }) => href),
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b111c" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="alperen.me" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {
+      Astro.url.pathname === "/" && (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(person).replace(/</g, "\\u003c")}
+        />
+      )
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main" class="container" tabindex="-1"><slot /></main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  import Lenis from "lenis";
+
+  // Keep scrolling consistent with the approved glide, even under reduced motion.
+  // Touch and keyboard scrolling retain their native browser behavior.
+  const lenis = new Lenis({
+    autoRaf: true,
+    smoothWheel: true,
+    syncTouch: false,
+    lerp: 0.1,
+    // Match the Kontra reference's duration and exponential easing.
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    gestureOrientation: "vertical",
+    respectReducedMotion: false,
+  });
+
+  // Prevent the native anchor jump before starting the glide. Preserve URL history
+  // and move keyboard focus to the destination without scrolling a second time.
+  document.addEventListener("click", (event) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return;
+    const link =
+      event.target instanceof Element
+        ? event.target.closest<HTMLAnchorElement>("a[href]:not(.skip-link)")
+        : null;
+    if (
+      !link ||
+      !link.hash ||
+      link.origin !== location.origin ||
+      link.pathname !== location.pathname ||
+      link.search !== location.search ||
+      link.hasAttribute("download") ||
+      (link.target && link.target !== "_self")
+    )
+      return;
+    const target = document.getElementById(
+      decodeURIComponent(link.hash.slice(1)),
+    );
+    if (!target) return;
+
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, "", link.hash);
+    lenis.scrollTo(target, {
+      onComplete: () => {
+        if (!target.hasAttribute("tabindex")) {
+          target.setAttribute("tabindex", "-1");
+          target.addEventListener(
+            "blur",
+            () => target.removeAttribute("tabindex"),
+            { once: true },
+          );
+        }
+        target.focus({ preventScroll: true });
+      },
+    });
+  });
+</script>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page not found / alperen.me"
+  description="This page could not be found. Return to homepage."
+  noindex
+>
+  <section aria-labelledby="error-title">
+    <p class="section-label">404</p>
+    <h1 id="error-title">Page not found.</h1>
+    <p>The page may have moved, or the address may be incorrect.</p>
+    <a href="/">Back to the homepage</a>
+  </section>
+</BaseLayout>
+
+<style>
+  section {
+    padding-block: var(--section-space);
+  }
+  h1 {
+    margin-block: var(--space-5);
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: 1.1;
+  }
+  section > p:not(.section-label) {
+    color: var(--color-text-secondary);
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: var(--space-5);
+  }
+</style>

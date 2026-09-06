@@ -1,0 +1,53 @@
+---
+import { profile } from "../data/profile";
+import ExternalLink from "./ExternalLink.astro";
+---
+
+<footer class="container">
+  <div class="footer-content">
+    <p class="section-label">Elsewhere</p>
+    <ul aria-label="Find Alperen elsewhere">
+      {
+        profile.elsewhere.map(({ label, href }) => (
+          <li>
+            <ExternalLink href={href} label={label} />
+          </li>
+        ))
+      }
+    </ul>
+    <p class="signature">{profile.name}</p>
+  </div>
+</footer>
+
+<style>
+  .footer-content {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-6) var(--space-7);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    padding: 0;
+    margin: var(--space-3) 0 var(--space-5);
+    list-style: none;
+  }
+  .signature {
+    color: var(--color-text-secondary);
+    font-size: var(--text-xs);
+  }
+
+  @media (min-width: 48rem) {
+    .footer-content {
+      display: flex;
+      align-items: center;
+      gap: var(--space-7);
+    }
+    ul {
+      margin: 0;
+    }
+    .signature {
+      margin-left: auto;
+    }
+  }
+</style>
