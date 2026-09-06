@@ -12,9 +12,9 @@ import { selectedWork } from "../data/work";
     <p class="intro-copy">
       {profile.introduction.beforeCountry}<span class="country-highlight"
         >{profile.introduction.country}</span
-      >{profile.introduction.afterCountry}<span class="security-highlight"
-        >{profile.introduction.security}</span
-      >{profile.introduction.afterSecurity}
+      >{profile.introduction.afterCountry}{profile.introduction.security}{
+        profile.introduction.afterSecurity
+      }
     </p>
   </section>
 
@@ -164,19 +164,6 @@ import { selectedWork } from "../data/work";
     -webkit-background-clip: text;
     color: transparent;
   }
-  .security-highlight {
-    display: inline-block;
-    color: var(--color-text);
-    font-family:
-      ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-    font-size: 0.88em;
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    background: linear-gradient(105deg, #62c989 10%, #c3f5cf 52%, #62c989 92%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
   .work-list {
     margin: var(--space-5) 0 0;
     padding: 0;
@@ -270,8 +257,7 @@ import { selectedWork } from "../data/work";
   }
 
   @media (forced-colors: active) {
-    .country-highlight,
-    .security-highlight {
+    .country-highlight {
       background: none;
       color: currentColor;
     }

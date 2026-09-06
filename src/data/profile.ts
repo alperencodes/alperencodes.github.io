@@ -37,8 +37,7 @@ export const experience: Experience[] = [
     period: "2026",
     organization: "Complemedis AG",
     role: "Software Engineer · 3-month summer internship",
-    context:
-      "typescript · next.js · express.js · supabase · tailwind · qodana",
+    context: "typescript · next.js · express.js · supabase · tailwind · qodana",
   },
   {
     period: "2024",
@@ -66,7 +65,8 @@ export const education = [
   },
   {
     period: "2020-2024",
-    institution: "Informatikmittelschule (transl. computer science secondary school)",
+    institution:
+      "Informatikmittelschule (transl. computer science secondary school)",
     degree:
       "Federal VET Diploma in Computer Science & Federal Voccational Baccaleaurate in Business",
     context: "computer science · business & finance",
